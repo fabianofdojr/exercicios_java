@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora de Compra de Maçãs</title>
+  </head>
+  <body>
+    <h1>Calculadora de Compra de Maçãs</h1>
+    <form>
+      <label for="numero_macas">Número de maçãs compradas:</label>
+      <input type="number" id="numero_macas" name="numero_macas">
+      <button type="button" onclick="calcularValor()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+    <script>
+      function calcularValor() {
+        var numero_macas = document.getElementById("numero_macas").value;
+        if (numero_macas < 12) {
+          var valor_total = numero_macas * 0.3;
+        } else {
+          var valor_total = numero_macas * 0.25;
+        }
+        document.getElementById("resultado").innerHTML = "O valor total da compra é R$ " + valor_total.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplo de algoritmo em JavaScript</title>
+  </head>
+  <body>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome"><br><br>
+
+      <label for="idade">Idade:</label>
+      <input type="text" id="idade" name="idade"><br><br>
+
+      <button type="button" onclick="calcular()">Calcular</button><br><br>
+
+      <p id="resultado"></p>
+    </form>
+
+    <script>
+      function calcular() {
+        // Pega os valores dos campos do formulário
+        const nome = document.getElementById("nome").value;
+        const idade = document.getElementById("idade").value;
+
+        // Calcula o ano de nascimento com base no ano atual
+        const anoAtual = new Date().getFullYear();
+        const anoNascimento = anoAtual - idade;
+
+        // Exibe o resultado na página
+        const resultado = document.getElementById("resultado");
+        resultado.innerHTML = `Nome: ${nome}, Idade: ${idade} anos, nasceu em ${anoNascimento}`;
+      }
+    </script>
+  </body>
+</html>

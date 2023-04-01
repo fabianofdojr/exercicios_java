@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Percentuais de Votos</title>
+  </head>
+  <body>
+    <form>
+      <label for="eleitores">Total de Eleitores:</label>
+      <input type="number" id="eleitores"><br>
+      <label for="brancos">Votos Brancos:</label>
+      <input type="number" id="brancos"><br>
+      <label for="nulos">Votos Nulos:</label>
+      <input type="number" id="nulos"><br>
+      <label for="validos">Votos Válidos:</label>
+      <input type="number" id="validos"><br>
+      <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+      function calcular() {
+        // Lê os valores informados pelo usuário
+        var eleitores = document.getElementById("eleitores").value;
+        var brancos = document.getElementById("brancos").value;
+        var nulos = document.getElementById("nulos").value;
+        var validos = document.getElementById("validos").value;
+
+        // Calcula os percentuais de votos brancos, nulos e válidos em relação ao total de eleitores
+        var percBrancos = (brancos / eleitores) * 100;
+        var percNulos = (nulos / eleitores) * 100;
+        var percValidos = (validos / eleitores) * 100;
+
+        // Exibe o resultado na página
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Percentual de Votos Brancos: " + percBrancos.toFixed(2) + "%<br>";
+        resultado.innerHTML += "Percentual de Votos Nulos: " + percNulos.toFixed(2) + "%<br>";
+        resultado.innerHTML += "Percentual de Votos Válidos: " + percValidos.toFixed(2) + "%";
+      }
+    </script>
+  </body>
+</html>
